@@ -12,8 +12,10 @@ class Solution:
                 return
             if root and level == len(result_list):
                 result_list.append(root.val)
+                
             dfs(root.right, result_list, level+1)
             dfs(root.left, result_list, level+1)
+            
             return result_list
         
         return dfs(root, [], 0)
