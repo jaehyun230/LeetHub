@@ -4,7 +4,6 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
-from collections import deque
 class Solution:
     def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
         
@@ -15,7 +14,7 @@ class Solution:
         binary_tree = []
         q = []
         q.append(root)
-        
+              
         while q :
             parent, children = [], []
             while q :
