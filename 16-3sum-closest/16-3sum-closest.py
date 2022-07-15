@@ -2,8 +2,8 @@ class Solution:
     def threeSumClosest(self, nums: List[int], target: int) -> int:
         
         nums.sort()    
-        answer = None
-        diff = float('inf')
+        answer = nums[0] + nums[1] + nums[2]
+        diff = abs(target-answer)
                        
         for i in range(len(nums)-2) :           
             start = i +1
