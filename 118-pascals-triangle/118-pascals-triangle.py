@@ -2,7 +2,6 @@ class Solution:
     def generate(self, numRows: int) -> List[List[int]]:
         answer = [[1]]
         
-        print(len(answer[0]))
         for i in range (numRows-1) :
             temp = []
             for j in range(len(answer[i])) :
