@@ -7,7 +7,7 @@ class Solution:  # The plan is to iterate through the words and, for each word w
 
     def numMatchingSubseq(self, s: str, words: list[str]) -> int:
                                     
-           
+        @lru_cache(None)            
         def checkWord(word):
             start = 0 
 
