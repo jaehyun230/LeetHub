@@ -1,26 +1,21 @@
-import bisect
-from collections import defaultdict
-class Solution:
-    def numMatchingSubseq(self, s: str, words: List[str]) -> int:
-        char_idx = defaultdict(list)
-        for i, c in enumerate(s):
-            char_idx[c].append(i)
+class Solution:  # The plan is to iterate through the words and, for each word w, move 
+                     # letter by letter of w though the string s if possible to determine 
+                     # whether w is a subsequence of s. If so, we  add to ans.
+                     #
+                     # We use a function and a cache because many of the words share letter
+                     # sequences.
+
+    def numMatchingSubseq(self, s: str, words: list[str]) -> int:
+                                    
+           
+        def checkWord(word):
+            start = 0 
+
+            for ch in word:         
+                start = s.find(ch, start) + 1          # <-- find gives us the index of the
+                if not start: return False             #     the next occurence of ch after
+                                                       #     the index "start"
+            return True
         
-        ans = 0
-        for word in words:
-            match = True
-            prev_idx = -1
-            for c in word:
-                if c not in char_idx:
-                    match = False
-                    break
-                
-                char_idx_lst = char_idx[c]
-                lst_idx = bisect.bisect_right(char_idx_lst, prev_idx)
-                if lst_idx == len(char_idx_lst):
-                    match = False
-                    break
-                
-                prev_idx = char_idx_lst[lst_idx]
-            ans += 1 if match else 0
-        return ans
+        return sum(checkWord(w) for w in words)        # <-- we count all the words that
+                                                       #     returned True.
