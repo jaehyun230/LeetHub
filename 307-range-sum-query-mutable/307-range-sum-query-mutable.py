@@ -1,8 +1,6 @@
 class NumArray:
 
-    nums = []
-    s = 0
-    l = 0
+    
     
     def __init__(self, nums: List[int]):
         self.nums = nums
