@@ -22,7 +22,7 @@ class Solution:
         
         ans = 0           
         for i in range(len(arr)):        
-            ans += dfs(i)        
+            ans += dfs(i) %(10**9 + 7)      
         return ans %(10**9 + 7)
         
             
