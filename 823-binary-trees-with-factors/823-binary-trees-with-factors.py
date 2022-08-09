@@ -13,7 +13,7 @@ class Solution:
                     res = arr[i]//arr[j]
                     if res in arr :
                         dic[i].add((j, arr.index(res)))
-        @cache
+        @lru_cache(maxsize=None)
         def dfs(i):
             now = 1
             for l, r in dic[i]: 
