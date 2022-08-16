@@ -10,6 +10,9 @@ class Solution:
         self.sum = 0
 
         def dfs(node) :
+            if not node :
+                return
+            
             if low <= node.val <= high :
                 self.sum +=node.val
 
