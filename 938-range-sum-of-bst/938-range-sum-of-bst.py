@@ -6,16 +6,18 @@
 #         self.right = right
 class Solution:
     def rangeSumBST(self, root: Optional[TreeNode], low: int, high: int) -> int:
-        stack = collections.deque([root])
+        global sum
         sum = 0
-        # 큐 연산을 이용해 반복 구조 BFS로 필요한 노드 탐색
-        while stack:
-            node = stack.popleft()
-            if node:
-                if node.val > low:
-                    stack.append(node.left)
-                if node.val < high:
-                    stack.append(node.right)
-                if low <= node.val <= high:
-                    sum += node.val
+
+        def dfs(node) :
+            global sum
+            if low <= node.val <= high :
+                sum +=node.val
+
+            if node.left != None :
+                dfs(node.left)
+            if node.right != None :
+                dfs(node.right)
+        dfs(root)
+        
         return sum
