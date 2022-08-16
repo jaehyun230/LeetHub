@@ -15,7 +15,7 @@ class Solution:
 
             if node.left != None :
                 dfs(node.left)
-            if node.right != None :
+            if node.right != None and node.val <= high:
                 dfs(node.right)
         dfs(root)
   
