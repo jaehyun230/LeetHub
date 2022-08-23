@@ -13,11 +13,7 @@ class Solution:
             check.append(temp.val)
             temp = temp.next
         
-        index = len(check) - 1
-        while head :
-            if head.val != check[index] :
-                return False
-            head = head.next
-            index -=1
-        
-        return True
+        if check == check[::-1] :
+            return True
+        else :
+            return False
