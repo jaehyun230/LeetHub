@@ -16,8 +16,7 @@ class Solution:
             
             if node.val >= max(path) :
                 self.answer +=1
-                print(path)
-            
+                           
             if node.left :
                 binary_search(node.left, path+[node.val])
             if node.right :
