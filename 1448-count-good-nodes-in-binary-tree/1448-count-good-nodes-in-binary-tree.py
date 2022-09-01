@@ -9,21 +9,22 @@ class Solution:
         num = root.val
         self.answer = 0
         
-        def binary_search(node, path) :
+        def binary_search(node, value):
             
             if not node :
                 return
             
-            if node.val >= max(path) :
+            if node.val >= value :
                 self.answer +=1
+                value = node.val
                            
             if node.left :
-                binary_search(node.left, path+[node.val])
+                binary_search(node.left, value)
             if node.right :
-                binary_search(node.right, path+[node.val])
+                binary_search(node.right, value)
             
             return
         
-        binary_search(root, [-10**4])
+        binary_search(root, -10**4)
         
         return self.answer
