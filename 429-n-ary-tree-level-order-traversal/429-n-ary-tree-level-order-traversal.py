@@ -10,7 +10,6 @@ from collections import defaultdict
 class Solution:
     def levelOrder(self, root: 'Node') -> List[List[int]]:
         
-        answer = []
         self.dic = defaultdict(list)
         
         def dfs(node, depth) :
@@ -25,7 +24,4 @@ class Solution:
         
         dfs(root, 0)
         
-        for i in self.dic :
-            answer.append(self.dic[i])
-        
-        return answer
+        return self.dic.values()
