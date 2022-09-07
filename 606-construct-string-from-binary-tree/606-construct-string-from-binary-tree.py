@@ -8,7 +8,6 @@ class Solution:
     def tree2str(self, root: Optional[TreeNode]) -> str:
         self.answer = ""
         
-        print(root)
         def dfs(node) :
             if not node :
                 return
