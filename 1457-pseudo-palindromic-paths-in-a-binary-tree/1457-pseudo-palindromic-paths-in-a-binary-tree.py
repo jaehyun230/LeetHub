@@ -35,10 +35,8 @@ class Solution:
             if node.left :
                 dfs(node.left, dic) 
             if node.right :
-                dfs(node.right, dic)
-                
-            dic[node.val] -=1
-            
+                dfs(node.right, dic)     
+            dic[node.val] -=1      
         if root :
             dfs(root, {})
         
