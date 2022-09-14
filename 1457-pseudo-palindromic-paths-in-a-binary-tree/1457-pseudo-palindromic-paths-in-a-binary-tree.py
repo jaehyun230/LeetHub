@@ -33,10 +33,10 @@ class Solution:
                     dic[node.val] -=1
             
             if node.left :
-                dfs(node.left, dic)
-                
+                dfs(node.left, dic) 
             if node.right :
                 dfs(node.right, dic)
+                
             dic[node.val] -=1
             
         if root :
