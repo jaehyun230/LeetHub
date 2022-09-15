@@ -5,9 +5,7 @@ class Solution:
             return []
         
         changed.sort()
-        
         answer = []
-        
         dic = {}
         
         for val in changed :
