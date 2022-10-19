@@ -1,3 +1,5 @@
+import heapq
+
 class Solution:
     def topKFrequent(self, words: List[str], k: int) -> List[str]:
         
@@ -9,17 +11,16 @@ class Solution:
             else :
                 dic[word] +=1
         
-        dic = dict(sorted(dic.items()))
+        heap = []
         
-        sorted_dict = dict(sorted(dic.items(), key = lambda item: item[1], reverse = True))
+        for i in dic :
+            heapq.heappush(heap, [-dic[i], i])
         
         answer = []
         
-        count = 0
-        for i in sorted_dict :
-            if count == k :
-                break
-            answer.append(i)
-            count +=1
-            
+        while k > 0 :
+            num, target = heapq.heappop(heap)
+            answer.append(target)
+            k -=1
+        
         return answer
