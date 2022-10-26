@@ -14,7 +14,8 @@ class Solution:
             if remain in dic :
                 if i - dic[remain] >= 2 :
                     return True
-
+            
+            #dic.get -> remain key none than i get
             dic[remain] = min(dic.get(remain, i), i)
         
         return False
