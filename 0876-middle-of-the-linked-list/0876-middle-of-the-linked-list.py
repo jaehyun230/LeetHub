@@ -13,13 +13,9 @@ class Solution:
             count +=1
             node = node.next
         
-        search_count = 0
-        
+        search_count = 0  
         now = head
-        
-        # if count %2 == 1 :
-        #     count +=1
-        
+             
         while now :
             if search_count >= count//2 :
                 return now
