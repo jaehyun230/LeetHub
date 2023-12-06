@@ -3,7 +3,6 @@ class Solution:
         
         answer = 0
         for i in range(n) :
-            temp = i//7+1 + i%7
-            answer +=temp
+            answer += i//7+1 + i%7
         
         return answer
