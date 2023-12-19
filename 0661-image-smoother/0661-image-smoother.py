@@ -10,13 +10,10 @@ class Solution:
             
             for j in range(len(img[i])) :
                 number = 0
-                for k in range(9) :
-                    
+                for k in range(9) :  
                     if 0<= i+mx[k] < len(img) and 0 <= j+my[k] < len(img[i]) :
-        
                         number +=1
                         answer[i][j] += img[i+mx[k]][j+my[k]]
-                
                 
                 answer[i][j] = answer[i][j]//number
                     
