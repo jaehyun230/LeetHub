@@ -19,4 +19,7 @@ class Solution:
                     continue
             dic[num] = i
         
-        return int(ans) if ans != -float('inf') else 0
+        if ans != -float('inf') :
+            return ans
+        else :
+            return 0
