@@ -11,7 +11,6 @@ class Solution:
         
         sorted_dic = sorted(dic.items(), key = lambda item: item[1])
         
-        
         answer = len(sorted_dic)
         for _, count in sorted_dic :
             if k >= count :
