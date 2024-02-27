@@ -1,11 +1,15 @@
 class Solution:
     def longestPalindrome(self, s: str) -> str:
-        
-        answer = s[0]
+        answer = ""
+        def bfs(left, right) :
+                
+            while left>= 0 and right < len(s) and s[left] == s[right] :
+                left -=1
+                right +=1
+            
+            return s[left+1 :right]
+            
         for i in range(len(s)) :
-            for j in range(i, len(s)) :
-                arr = s[i:j+1]
-                if len(arr) > len(answer) and arr == arr[::-1] :
-                    answer = arr
+            answer = max(bfs(i, i), bfs(i, i+1), answer, key = len)
         
         return answer
