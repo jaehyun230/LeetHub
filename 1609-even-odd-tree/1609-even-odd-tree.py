@@ -10,7 +10,7 @@ class Solution:
         pre_depth = 0
         pre_value = float('-inf')
         q = deque()
-        q.append([root, 0])
+        q.append([root, pre_depth])
         
         while q :
             now, depth = q.popleft()
