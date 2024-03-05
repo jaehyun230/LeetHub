@@ -3,18 +3,25 @@ class Solution:
         
         answer = set()
         
-        dic = defaultdict(int)
         nums.sort()
+        n = len(nums)
         
-        for k in range(0, len(nums)) :
-            dic[nums[k]] = k
-        
-        for i in range(0, len(nums)-1) :
-            for j in range(i+1, len(nums)) :
-                
-                target = (nums[i] + nums[j])*-1
-                if target in dic :
-                    if dic[target] > j :
-                        answer.add((nums[i], nums[j], target))
-                            
+        for i in range(n-2) :
+            
+            left = i+1
+            right = n-1
+            
+            if left == right :
+                continue
+            
+            while left < right :
+                target =  nums[i] + nums[left] + nums[right]
+                if target == 0 :
+                    answer.add((nums[i], nums[left], nums[right]))
+                    left +=1
+                elif target < 0 :
+                    left +=1
+                elif target > 0 :
+                    right -=1
+             
         return list(answer)
